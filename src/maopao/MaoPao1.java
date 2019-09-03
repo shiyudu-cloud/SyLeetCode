@@ -3,7 +3,7 @@ package maopao;
 import java.util.Arrays;
 
 /**
- *
+ * 冒泡排序
  * @Author: dushiyu
  * @Date: 2019-08-20 16:38
  * @Version 1.0
@@ -18,20 +18,22 @@ public class MaoPao1 {
      */
 
     public static void main(String[] args) {
-        int[] arr = {9,6,1,3,5};
-
-        for(int x =0 ; x < arr.length ; x++){
-            for (int y= x +1 ; y < arr.length ; y++){
-                int temp ;
-                if(arr[x] > arr[y]){
-                    temp = arr[x];
-                    arr[x] = arr[y];
-                    arr[y] = temp;
+        int[] arr = {9, 6, 1, 3, 5};
+        // type2
+        //外层循环控制排序趟数
+        for(int x =0 ; x < arr.length -1 ; x++){
+            //内层循环控制每一趟排序多少次
+            for (int y = 0 ; y < arr.length -1 -x ; y++ ){
+                if(arr[y]> arr[y+1]){
+                    int temp  = arr[y];
+                    arr[y] = arr[y+1];
+                    arr[y+1] = temp;
                 }
             }
         }
-        System.out.println(Arrays.toString(arr));
+        System.out.println("Type 2"+Arrays.toString(arr));
     }
+
 
 
 
